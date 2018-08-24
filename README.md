@@ -11,5 +11,25 @@ just run
 
 ## TODO:
 
-- accept JSON as input (with values)
-- accept YAML as input
+### JSON
+
+accept JSON as input
+
+For example JSON like
+
+```json
+{
+    "name":"John",
+    "age":30,
+    "cars": {
+        "car1":"Ford",
+        "car2":"BMW",
+    }
+ }
+ ```
+
+ will replace ${NAME.CARS.CAR1} with value Ford
+
+### YAML
+
+accept YAML as input
