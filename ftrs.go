@@ -41,7 +41,7 @@ func TransformFile(file string, from string, to string) error {
 
 func main() {
 
-	dryRunPtr := flag.Bool("dry_run", false, "a bool")
+	dryRunPtr := flag.Bool("dry_run", false, "run without actually doing anything")
 	inputFilePtr := flag.String("input_file", "", "File to transform. (Required)")
 
 	flag.Parse()
