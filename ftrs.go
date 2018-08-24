@@ -41,10 +41,17 @@ func TransformFile(file string, from string, to string) error {
 
 func main() {
 
-	wordPtr := flag.Bool("dry_run", false, "a bool")
+	dryRunPtr := flag.Bool("dry_run", false, "a bool")
+	inputFilePtr := flag.String("input_file", "", "File to transform. (Required)")
+
 	flag.Parse()
-	fmt.Println("dry_run:", *wordPtr)
-	fmt.Println("tail:", flag.Args())
+	fmt.Println("dry_run:", *dryRunPtr)
+	//fmt.Println("tail:", flag.Args())
+
+	if *inputFilePtr == "" {
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
 
 	err := TransformFile("testfile.txt", "${DOMAIN}", "mylittledomain.com")
 	if err != nil {
