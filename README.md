@@ -3,11 +3,15 @@ utility to quickly replace text in files, configs and so on..
 
 ## DONE:
 
-- simple text conversion
+- simple text conversion with single value
 
 just run 
 
-> go run ftrs.go
+```bash
+go run ftrs.go
+```
+
+which will transform testfile.txt to test_new.txt
 
 ## TODO:
 
@@ -28,7 +32,7 @@ For example JSON like
  }
  ```
 
- will replace ${NAME.CARS.CAR1} with value Ford
+ will replace **${NAME.CARS.CAR1}** with value *Ford*.
 
 ### YAML
 
