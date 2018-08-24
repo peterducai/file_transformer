@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -39,6 +40,12 @@ func TransformFile(file string, from string, to string) error {
 }
 
 func main() {
+
+	wordPtr := flag.Bool("dry_run", false, "a bool")
+	flag.Parse()
+	fmt.Println("dry_run:", *wordPtr)
+	fmt.Println("tail:", flag.Args())
+
 	err := TransformFile("testfile.txt", "${DOMAIN}", "mylittledomain.com")
 	if err != nil {
 		panic(err)
