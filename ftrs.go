@@ -39,7 +39,7 @@ func TransformFile(file string, from string, to string) error {
 }
 
 func main() {
-	err := TransformFile("testfile.txt", "${NEWVAL}", "whatever")
+	err := TransformFile("testfile.txt", "${DOMAIN}", "mylittledomain.com")
 	if err != nil {
 		panic(err)
 	}
