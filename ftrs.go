@@ -43,6 +43,7 @@ func main() {
 
 	dryRunPtr := flag.Bool("dry_run", false, "run without actually doing anything")
 	inputFilePtr := flag.String("input_file", "", "File to transform. (Required)")
+	inputFileTypePtr := flag.String("input_file_type", "", "File type of input (json, xml, yaml)")
 
 	flag.Parse()
 	fmt.Println("dry_run:", *dryRunPtr)
@@ -51,6 +52,10 @@ func main() {
 	if *inputFilePtr == "" {
 		flag.PrintDefaults()
 		os.Exit(1)
+	}
+
+	if *inputFileTypePtr == "" {
+		fmt.Println("type")
 	}
 
 	err := TransformFile("testfile.txt", "${DOMAIN}", "mylittledomain.com")
