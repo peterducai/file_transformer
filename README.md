@@ -5,11 +5,10 @@ utility to quickly replace text in files, configs and so on..
 
 - simple text conversion with single value
 
-just run 
+## INSTALL
 
-```bash
-go run ftrs.go
-```
+> go get github.com/peterducai/file_transformer
+
 
 which will transform testfile.txt to test_new.txt
 
